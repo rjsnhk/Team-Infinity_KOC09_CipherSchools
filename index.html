@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Dosis:wght@300&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .page-1
+        {
+            background-image: url("bg1.png");
+            background-size: cover;
+            height: 100vh;  
+            /* width: 96%;     
+            margin: auto; */
+        }
+        .logo img
+        {
+            width: 220px;
+        }
+        .phone 
+        {
+            float: right;
+            height: 500px;
+            background-color: white;
+            border-radius: 35px;
+            width: 260px;
+            position: relative;
+            right: 220px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .camera
+        {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: rgb(107, 107, 107);
+            position: relative;
+            top: 10px;
+        }
+        .proximate
+        {
+            height: 10px;
+            width: 50px;
+            border-radius: 15px;
+            background-color: rgb(107, 107, 107);
+            position: relative;
+            top: 20px;
+        }
+        .navigation
+        {
+            height: 150px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            color: white;
+        }
+        .navigation div:nth-child(7)
+        {
+            height: 28px;
+            width: 120px;
+            padding: 5px;
+            /* border: 1px solid black; */
+            border-radius: 25px;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: #02b2e7;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            font-weight: 500;
+        }
+        .nav-item
+        {
+            cursor: pointer;
+        }
+        .navigation div:nth-child(7):hover
+        {
+            color: white;
+            background-color: rgb(0, 213, 0);
+            transition: 0.5s;
+        }
+        .nav-item:hover{
+            color: rgb(0, 213, 0);
+            font-size: 20px;
+            background-color: #55ACEE;
+        }
+        .home-button
+        {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255);
+            position: relative;
+            bottom: 16px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        }
+        .display
+        {
+            height: 72%;
+            width: 80%;
+            border: 1px solid rgba(199, 199, 199, 0.405);
+            position: relative;
+            top: 40px;
+            border-radius: 8px;
+        }
+        .volume
+        {
+            /* float: left; */
+            height: 18px;
+            width: 5px;
+            background-color: white;
+            border-radius: 3px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+            position: relative;
+            bottom: 270px;
+            right: 130px;
+            margin-bottom: 10px;
+        }
+        .text-box
+        {
+            float: left;
+            position: relative;
+            left: 200px;
+            top: 50px;
+            color: white;
+            font-family: 'Allerta Stencil', sans-serif;
+        }
+        .text-box h1
+        {
+            font-size: 60px;
+            color: #0047c1;
+            margin: 0;
+            padding: 0;
+        }
+        .text-box p{
+            margin-top:10px ;
+            padding: 0;
+            font-size: 40px;
+        }
+        .gtsrt
+        {
+            height: 35px;
+            width: 150px;
+            padding: 5px;
+            /* border: 1px solid black; */
+            border-radius: 25px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            color: #02b2e7;
+            font-weight: bold;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            cursor: pointer;
+        }
+        .gtsrt:hover
+        {
+            color: white;
+            background-color: rgb(255, 154, 13);
+            transition: 0.5s;
+        }
+        .phone-nav
+        {
+            background-color: #02b2e7;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            font-size: 18px;
+            color: white;
+            font-family: 'Dosis', sans-serif;
+            font-family: 'Titillium Web', sans-serif;
+
+        }
+        .phone-nav hr
+        {
+            width: 15px;
+            height: 1px;
+            margin: 2px;
+            padding: 0;
+            background-color: white;
+            border: 1px solid white;
+        }
+        .company span
+        {
+            font-weight: bold;
+        }
+        .phone-body
+        {
+            padding: 10px;
+            font-size: 12px;        
+        }
+        .phone-body code
+        {
+            color: rgb(120, 120, 120);
+        }
+        .phone-body code span
+        {
+            color: rgb(212, 60, 60);
+        }
+        .phone-body hr
+        {
+            margin-top: 15px;
+            height: 1px;
+            background-color: #d0d0d077;
+            visibility: hidden;
+        }
+        .phone-body .head
+        {
+            color: #0047c1;
+            font-weight: 700;
+            font-family: 'Dosis', sans-serif;
+            font-family: 'Titillium Web', sans-serif;
+        }
+        .btnn
+        {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            bottom: 5px;
+        }
+        .btnn .prev
+        {
+            height: 25px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid black; */
+            border-radius: 4px;
+            font-size: 11px;
+            background-color: #b8b8b8;
+            color: white;
+        }
+        .btnn .next
+        {
+            height: 25px;
+            width: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid black; */
+            border-radius: 4px;
+            font-size: 11px;
+            background-color: rgb(0 184 34);
+            color: white;
+        }
+        .page-2
+        {
+            height: 70vh;
+            background-color: white;
+            padding-left: 50px;
+            display: flex;
+        }
+        .laptop img
+        {
+            width: 700px;
+        }
+        .video
+        {
+            position: relative;
+            right: 570px;
+            bottom: 150px;
+        }
+        .laptop h1
+        {
+            margin: 0;
+            padding: 0;
+            font-size: 60px;
+            margin-left: 230px;
+            color: #0047c1;
+        }
+        footer
+        {
+            height: 25vh;
+            width: 100%;
+            background-color: rgb(55, 55, 55);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .fa
+        {
+            /* padding: 10px; */
+            padding-top: 10px;
+            font-size: 20px;
+            width: 40px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            margin-right: 20px;
+            background: #666666;
+            color: white;
+            cursor: pointer;
+        }
+        
+
+        .fa-facebook:hover
+        {
+            background: #3B5998;
+            color: white;
+            transition: 0.35s;
+        }
+        
+        .fa-twitter:hover
+        {
+            background: #55ACEE;
+            color: white;
+            transition: 0.35s;
+        }
+        .fa-instagram:hover
+        {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+            transition: 0.35s;
+
+        }
+        .logo img
+        {
+            width: 150px;
+        }
+        footer div
+        {
+            margin-right: 20px;
+            cursor: pointer;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: rgb(144, 144, 144);
+        }
+        .enquire
+        {
+            height: 40px;
+            width: 150px;
+            background-color: #4195fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: whitesmoke;
+            font-size: 16px;
+            font-family: 'Cascadia code' ,Consolas, 'Courier New', monospace;
+            cursor: pointer;
+            border-radius: 5px;
+            position: relative;
+            left: 40px;
+        }
+        .enquire:hover
+        {
+            background-color: green;
+            transition: 1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-1">
+        <nav class="navigation">
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+            <div class="nav-item" id="nav-item-1">Home</div>
+            <div class="nav-item" id="nav-item-2">Videos</div>
+            <div class="nav-item" id="nav-item-3">Tutors</div>
+            <div class="nav-item" id="nav-item-4">Test Yourself</div>
+            <div class="nav-item" id="nav-item-5">Contact Us</div>
+            <div class="nav-item" id="nav-item-6">Signup</div>
+        </nav>
+        <div class="text-box">
+                <h1>Learn to code</h1>
+                <p>Because the world <br> runs on code</p>
+                <div class="gtsrt">Get Srarted</div>
+        </div>
+
+        <div class="phone">
+            <div class="camera"></div>
+            <div class="proximate"></div>
+            <div class="display">
+                <div class="phone-nav">
+                    <div class="company"><span>ON </span>TECH</div>
+                    <div class="hr">
+                        <hr>
+                        <hr>
+                        <hr>
+                    </div>
+                </div>
+                <div class="phone-body">
+                    <span class="head"> HTML Class 1</span>
+                    <hr>
+                    <code>
+                        &lt;<span>!DOCTYPE html</span> &gt;
+                        <br>
+                        &emsp;&emsp;&lt;<span>html</span>&gt; 
+                        <br>
+                        &emsp;&emsp;&emsp;&lt;<span>head</span>&gt; 
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;&lt;<span>title</span>&gt;
+                        Page Title <br>
+                        &emsp;&emsp;&emsp;&emsp;&lt;/<span>title</span>&gt;
+                        <br>
+                        &emsp;&emsp;&emsp;&lt;/<span>head</span>&gt; 
+                        <br>
+                        &emsp;&emsp;&emsp;&lt;<span>body</span>&gt; 
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;&lt;<span>h1</span>&gt;
+                        This is a Heading <br>
+                        &emsp;&emsp;&emsp;&emsp;&lt;/<span>h1</span>&gt;
+                        <br>
+                        &emsp;&emsp;&emsp;&emsp;&lt;<span>p</span>&gt;
+                        This is a paragraph. <br> 
+                        &emsp;&emsp;&emsp;&emsp;&lt;/<span>p</span>&gt; <br>
+                        &emsp;&emsp;&emsp;&lt;/<span>body</span>&gt; 
+                        <br>
+                        &emsp;&emsp;&lt;/<span>html</span>&gt;
+                    </code>
+                    <hr>
+                    <div class="btnn">
+                        <div class="prev">
+                            &lt; Prev
+                        </div>
+                        <div class="next">
+                            Next &gt;
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="volume"></div>
+            <div class="volume"></div>
+            <div class="volume"></div>
+            <div class="home-button"></div>
+        </div>
+    </div>
+    <div class="page-2">
+        <div class="laptop">
+            <h1>Tutorial</h1>
+            <img src="4264999_91374-removebg-preview.png" alt="">
+            <video class="video" width="433" height="320" controls poster="img_intro2.png">
+            <source  src="W3Schools HTML Video Tutorial Introduction.mp4.mp4"type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+    <footer>
+        <div class="logo"><img src="logo.png" alt=""></div>
+        <a href="https://www.facebook.com/profile.php?id=100037464307966" target="_blank" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/rjsnhk" target="_blank" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/rjsnhk/" target="_blank" class="fa fa-instagram"></a>
+        <div>
+            &#169;2022 ON TECH
+        </div>
+        <div>Terms and Conditions</div>
+        <div>Privacy Policy</div>
+        <div>Cookie Policy</div>
+        <div class="enquire">
+            REGISTER
+        </div>
+    </footer>
+</body>
+</html>
